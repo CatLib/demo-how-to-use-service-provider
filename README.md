@@ -8,8 +8,6 @@
   <img src="https://codecov.io/gh/CatLib/Core/branch/master/graph/badge.svg" alt="Codecov" />
 </a>
 
-> 了解 [CatLib/Core](https://github.com/CatLib/Core) 源码
-
 ## 如何使用服务提供者
 
 这个Demo演示了服务提供者的正确用法。
