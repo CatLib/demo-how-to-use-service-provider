@@ -24,7 +24,7 @@ namespace Game.Debugger
         /// </summary>
         public override void Register()
         {
-            App.Singleton<UnityDebugger, IDebugger>();
+            App.Singleton<IDebugger, UnityDebugger>();
         }
     }
 }

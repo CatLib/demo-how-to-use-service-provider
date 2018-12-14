@@ -60,7 +60,7 @@ namespace Game.Debugger
         private void RegisterLoader(DebugLevels debugLevel)
         {
             var binder = SingletonLoaderWithDebugLevel(debugLevel) ?? SingletonLoaderWithPlatform();
-            binder.Alias<IResources>().OnResolving<ILoadingRule>(rule =>
+            binder.OnResolving<ILoadingRule>(rule =>
             {
                 rule.EnableSyncLoad = EnableSyncLoad;
             });
@@ -97,7 +97,7 @@ namespace Game.Debugger
 
             return Platform.isMobilePlatform
                 ? SingletonLoaderAssetBundle()
-                : App.Singleton<LoaderResourcesFolder>();
+                : App.Singleton<IResources, LoaderResourcesFolder>();
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace Game.Debugger
         /// <returns>服务绑定数据</returns>
         private IBindData SingletonLoaderAssetData()
         {
-            return App.Singleton<LoaderAssetData>();
+            return App.Singleton<IResources, LoaderAssetData>();
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Game.Debugger
         /// <returns>服务绑定数据</returns>
         private IBindData SingletonLoaderAssetBundle()
         {
-            return App.Singleton<LoaderAssetBundle>();
+            return App.Singleton<IResources, LoaderAssetBundle>();
         }
     }
 }
