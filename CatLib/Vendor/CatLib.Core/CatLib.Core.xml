@@ -284,6 +284,13 @@
             <typeparam name="TService">服务名</typeparam>
             <returns>是否已经被解决过</returns>
         </member>
+        <member name="M:CatLib.App.IsResolved(System.String)">
+            <summary>
+            服务是否已经被解决过
+            </summary>
+            <param name="service">服务名</param>
+            <returns>是否已经被解决过</returns>
+        </member>
         <member name="M:CatLib.App.CanMake(System.String)">
             <summary>
             是否可以生成服务
@@ -3117,11 +3124,12 @@
             <exception cref="T:CatLib.LogicException"><paramref name="service"/>的服务在绑定设置中不是静态的</exception>
             <returns>被修饰器处理后的新的实例</returns>
         </member>
-        <member name="M:CatLib.Container.Release(System.String)">
+        <member name="M:CatLib.Container.Release(System.Object)">
             <summary>
             释放静态化实例
             </summary>
-            <param name="service">服务名或别名</param>
+            <param name="mixed">服务名或别名或单例化的对象</param>
+            <returns>是否完成了释放</returns>
         </member>
         <member name="M:CatLib.Container.OnFindType(System.Func{System.String,System.Type},System.Int32)">
             <summary>
@@ -3420,6 +3428,13 @@
             <param name="makeServiceType">服务类型</param>
             <param name="userParams">用户传入的构造参数</param>
             <returns>构造函数参数</returns>
+        </member>
+        <member name="M:CatLib.Container.GetServiceWithInstanceObject(System.Object)">
+            <summary>
+            通过对象反向获取服务名
+            </summary>
+            <param name="instance">对象</param>
+            <returns>服务名</returns>
         </member>
         <member name="M:CatLib.Container.GuardConstruct(System.String)">
             <summary>
@@ -4417,11 +4432,11 @@
             <param name="instance">服务实例</param>
             <returns>被修饰器处理后的新的实例</returns>
         </member>
-        <member name="M:CatLib.IContainer.Release(System.String)">
+        <member name="M:CatLib.IContainer.Release(System.Object)">
             <summary>
-            释放某个静态化实例
+            释放某个单例化的对象
             </summary>
-            <param name="service">服务名或别名</param>
+            <param name="mixed">服务名或别名或单例对象</param>
         </member>
         <member name="M:CatLib.IContainer.Flush">
             <summary>
