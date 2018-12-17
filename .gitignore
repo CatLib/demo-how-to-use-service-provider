@@ -1,4 +1,4 @@
 *.meta
 
 .vs
-.dll.mdb
+*.dll.mdb
