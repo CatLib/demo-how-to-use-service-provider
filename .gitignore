@@ -1,4 +1,12 @@
-*.meta
-
-.vs
-*.dll.mdb
+.vs/
+Library/
+TestResults/
+build/
+Packages/
+Temp/
+*.sln
+Logs/
+obj/
+*.csproj
+Assets/StreamingAssets/
+Assets/StreamingAssets.meta
